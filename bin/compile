@@ -23,10 +23,6 @@ require 'java_buildpack/buildpack'
 
 build_dir = ARGV[0]
 
-echo "Getting NLP jar"
-
-curl http://nlp.stanford.edu/software/stanford-english-corenlp-2016-01-10-models.jar
-
 JavaBuildpack::Buildpack.with_buildpack(build_dir, 'Compile failed with exception %s') do |buildpack|
   buildpack.compile
 end
